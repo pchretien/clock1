@@ -16,7 +16,7 @@ top_clearance = motor_h/2;
 patin_r = (motor_h/2)-(nut_radius);
 patin_h = 3;
 
-magnet_r = 6;
+magnet_r = 6.1;
 magnet_h = 3;
 magnet_wall = 4;
 magnet_top_clearance = 1;
