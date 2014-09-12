@@ -1,12 +1,12 @@
 nut_radius = 5.5;
 nut_length = 22;
 nut_small_dia = 9.5;
-nut_center_radius = 3.75;
+nut_center_radius = 4.25;
 
 end_padding = 5;
 bottom_padding = 1;
 
-base_width = 24;
+base_width = 20;
 base_length = nut_length + (2*end_padding);
 base_thickness = bottom_padding + (2*nut_radius);
 
@@ -21,6 +21,7 @@ magnet_h = 3;
 magnet_wall = 4;
 magnet_top_clearance = 1;
 
+// Used to stabilize the piece
 module patin()
 {
 	difference()
@@ -32,6 +33,8 @@ module patin()
 	}
 }
 
+
+// Magnet holder
 module magnet()
 {
 	difference()
@@ -43,6 +46,7 @@ module magnet()
 	}
 }
 
+// Base assembly with no holes
 module base()
 {
 	union()
@@ -64,6 +68,7 @@ module base()
 	}
 }
 
+// Hex nut hole and cylindrical hole for the threaded rod
 module linear_nut()
 {
 	difference()
@@ -88,4 +93,3 @@ module linear_nut()
 }
 
 linear_nut();
-//patin();

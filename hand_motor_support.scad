@@ -39,6 +39,7 @@ module walls()
 	}
 }
 
+// Side motor mounting holes
 module ears()
 {
 	difference()
@@ -73,36 +74,43 @@ module ears()
 	}
 }
 
-module ears_fb()
+// Front motor mounting holes
+module ears_f()
 {
 	difference()
 	{
-		
-		union()
-		{
-			translate([ears_fb_x_trans,ears_fb_y_trans1,0])
+		translate([ears_fb_x_trans,ears_fb_y_trans1,0])
 				cylinder(r=ear_radius, h=bottom_thickness);
-		
-			translate([ears_fb_x_trans,ears_fb_y_trans2,0])
-				cylinder(r=ear_radius, h=bottom_thickness);
-		}
 
 		// Mount attachment holes
 		translate([ears_fb_x_trans,ears_fb_y_trans1,0])
 			cylinder(r=m3_nuts_radius, h=bottom_thickness);
+	}
+}
+
+// Rear motor mounting holes
+module ears_b()
+{
+	difference()
+	{
+
+		translate([ears_fb_x_trans,ears_fb_y_trans2,0])
+				cylinder(r=ear_radius, h=bottom_thickness);
 
 		translate([ears_fb_x_trans,ears_fb_y_trans2,0])
 			cylinder(r=m3_nuts_radius, h=bottom_thickness);
 	}
 }
 
+// Motor support
 difference()
 {
 	union()
 	{
 		walls();
 //		ears();
-		ears_fb();
+		ears_f();
+//		ears_b();
 	}
 
 	// Motor screws

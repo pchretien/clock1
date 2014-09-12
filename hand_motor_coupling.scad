@@ -1,6 +1,6 @@
-c_down_radius = 2.5;
+c_down_radius = 2.6;
 c_down_heigth = 12;
-c_up_radius = 3.4;
+c_up_radius = 3.1;
 c_up_heigth = 12;
 c_out_radius = 8.5;
 c_slot_width = 6;
