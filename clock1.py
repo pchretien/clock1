@@ -9,7 +9,7 @@ import RPi.GPIO as GPIO
 verbose = False
 
 # tic every second
-sleepDelay = 61
+sleepDelay = 1
 
 # Display a message to the console if the verbose mode is enabled
 def printInfo(msg):
@@ -47,15 +47,19 @@ def initGPIO():
 # Main
 #
 
-# Init the IOs
-initGPIO()
+def main():
 
-# Read the command line arguments
-processArgv()
+    # Init the IOs
+    initGPIO()
 
-printInfo('Starting clock1 ...')
+    # Read the command line arguments
+    processArgv()
 
-while True:
-    print('tic')
+    printInfo('Starting clock1 ...')
 
-    time.sleep(sleepDelay)
+    while True:
+        print('tic')
+        time.sleep(sleepDelay)
+
+if __name__ == "__main__":
+    main()
