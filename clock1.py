@@ -43,6 +43,10 @@ def initGPIO():
     GPIO.setup(18, GPIO.OUT)
     GPIO.setup(23, GPIO.OUT)
 
+def tic():
+    print('tic ' + time.ctime())
+    Timer(1, tic).start()
+
 #
 # Main
 #
@@ -57,8 +61,9 @@ def main():
 
     printInfo('Starting clock1 ...')
 
-    while True:
-        print('tic')
+    tic()
+    
+    while True:        
         time.sleep(sleepDelay)
 
 if __name__ == "__main__":
